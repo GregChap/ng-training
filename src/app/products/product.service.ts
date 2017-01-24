@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
@@ -27,6 +29,11 @@ export class ProductService {
       .map<IProduct[], IProduct>((products) => {
         return products.find((product) => product.id === id)
       })
+      .do(data => console.log('Data: ' + JSON.stringify(data)));
+  }
+
+  save(product: IProduct) {
+    //this._http.post(this._urlProduct);
   }
 
   private handleError(error: Response) {

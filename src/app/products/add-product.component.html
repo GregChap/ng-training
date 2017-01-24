@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>New product:</h1>
+  <form [formGroup]="addProductForm" (ngSubmit)="onSubmit($event)">
+    <div formGroupName="name">
+      <label for="productName">Name</label>
+      <input id="productName" formControlName="productName" type="text" required>
+      <br>
+      <label for="productCode">Code</label>
+      <input id="productCode" formControlName="productCode" type="text" required>
+    </div>
+
+    <div formGroupName="props" >
+      <label for="releaseDate">Release date</label>
+      <input id="releaseDate" formControlName="releaseDate" type="date" required>
+      <br>
+      <label for="price">Price</label>
+      <input id="price" formControlName="price" type="text" required>
+      <br>
+      <label for="description">Description</label>
+      <input id="description" formControlName="description" type="text">
+    </div>
+
+    <label for="starRating">Rating</label>
+    <input id="starRating" formControlName="starRating" type="text">
+    <br>
+    <label for="ImageUrl">Image URL</label>
+    <input id="imageUrl" formControlName="imageUrl" type="text">
+    <br>
+    <button type="submit" class="btn btn-default">Add it!</button> <!-- [disabled]="!addProductForm.form.valid" -->
+  </form>
+</div>

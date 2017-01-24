@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -11,6 +11,7 @@ import { ProductService } from './products/product.service';
 import { StarComponent } from './star/star.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ProductDetailComponent } from './products/product-detail.component';
+import { AddProductComponent } from './products/add-product.component';
 
 @NgModule({
   declarations: [
@@ -19,15 +20,17 @@ import { ProductDetailComponent } from './products/product-detail.component';
     StarComponent,
     WelcomeComponent,
     ProductDetailComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot([
       { path: 'products', component: ProductListComponent },
       { path: 'products/:id', component: ProductDetailComponent },
+      { path: 'addProduct', component: AddProductComponent},
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full'},
       { path: '404', redirectTo: 'welcome', pathMatch: 'full'},
