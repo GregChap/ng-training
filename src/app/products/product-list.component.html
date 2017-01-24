@@ -1,0 +1,29 @@
+<p>{{ pageTitle }}</p>
+<table *ngIf="products && products.length">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Date</th>
+      <th>Price</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>
+        <img [src]="product.imageUrl"
+             [title]="product.productName"
+             [style.width.px]="imageWidth"
+             [style.margin.px]="imageMargin">
+      </td>
+      <td>{{ product.productName }}</td>
+      <td>{{ product.productCode | lowercase }}</td>
+      <td>{{ product.releaseDate }}</td>
+      <td>{{ product.price | currency:"USD" }}</td>
+      <td>
+        <nat-star [rating]="product.starRating"></nat-star>
+      </td>
+    </tr>
+  </tbody>
+</table>

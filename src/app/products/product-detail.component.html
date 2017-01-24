@@ -1,0 +1,12 @@
+<div>
+  {{ pageTitle }}
+
+  <ul>
+    <li> Name: {{product.productName}}</li>
+    <li> Code: {{product.productCode}}</li>
+    <li> Price: {{product.price | currency:"USD"}}</li>
+    <li> Descr.: {{product.description}}</li>
+    <li><nat-star [rating]="product.starRating"></nat-star></li>
+    <li> Image url: {{product.imageUrl}}</li>
+  </ul>
+</div>
